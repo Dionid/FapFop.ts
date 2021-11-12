@@ -1,6 +1,6 @@
 {
   "name": "functional-oriented-programming-ts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Function Oriented Programming (FOP) in Typescript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
