@@ -9,7 +9,7 @@
     "noFallthroughCasesInSwitch": true,
     "stripInternal": true,
     "noEmit": true,
-    "outDir": "./dist/lib",
+    "outDir": "./dist",
     "baseUrl": ".",
     "target": "es5",
     "module": "commonjs",
