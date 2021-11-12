@@ -1,6 +1,6 @@
 {
   "name": "functional-oriented-programming-ts",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Function Oriented Programming (FOP) in Typescript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "lint": "tslint -p tsconfig.json",
-    "prettier": "prettier --list-different \"./{src}/**/*.ts\"",
-    "fix-prettier": "prettier --write \"./{src}/**/*.ts\"",
+    "prettier": "prettier --list-different \"./src/**/*.ts\"",
+    "fix-prettier": "prettier --write \"./src/**/*.ts\"",
     "clean": "rimraf ./lib",
     "prerelease": "npm run build",
     "prebuild": "npm run clean",
