@@ -1,19 +1,23 @@
 {
   "name": "functional-oriented-programming-ts",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Function Oriented Programming (FOP) in Typescript",
-  "main": "dist/index.js",
-  "module": "dist/es6/index.js",
-  "typings": "dist/index.d.ts",
-  "sideEffects": false,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib/**/*"],
   "scripts": {
     "lint": "tslint -p .",
     "prettier": "prettier --list-different \"./{src}/**/*.ts\"",
     "fix-prettier": "prettier --write \"./{src}/**/*.ts\"",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./lib",
     "prerelease": "npm run build",
     "prebuild": "npm run clean",
-    "build": "tsc -p ./tsconfig.build.json && tsc -p ./tsconfig.build-es6.json"
+    "build": " tsc -p ./tsconfig.build.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run fix-prettier && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "author": "David Shekunts <ditreyw@gmail.com>",
   "repository": {
