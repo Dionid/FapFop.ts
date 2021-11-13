@@ -31,7 +31,7 @@ hit "Watch" or "Star" to get notification.
 
 All news and announcements you can find in:
 
-🇷🇺 🦾IT-Качалка Давида Шекунца💪 – https://t.me/it_kachalka
+🇷🇺 🦾 IT-Качалка Давида Шекунца 💪 – https://t.me/it_kachalka
 
 # License
 
