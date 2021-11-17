@@ -1,22 +1,22 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
     "lib": [],
-    "sourceMap": false,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "stripInternal": true,
-    "noEmit": true,
+    "inlineSourceMap": true,
+    "allowSyntheticDefaultImports": true,
     "outDir": "./lib",
-    "target": "es5",
+    "target": "es2017",
     "module": "commonjs",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "declaration": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
+  "exclude": ["node_modules"],
   "include": ["./src/**/*"]
 }
