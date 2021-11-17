@@ -1,4 +1,4 @@
-export * from "./common"
+export * from './common'
 
 export type Branded<T, Brand> = T & Brand
 type Primitive = string | number | boolean | Date | string[] | number[] | boolean[] | Date[] | null | Buffer

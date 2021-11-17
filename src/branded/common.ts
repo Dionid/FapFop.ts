@@ -1,35 +1,28 @@
-import { BrandedPrimitive } from "./index";
+import { BrandedPrimitive } from './index'
 
 export const StringX = {
   ofString: (
     rules: {
-      min?: number;
-      max?: number;
+      min?: number
+      max?: number
     },
     value: string
   ) => {
     if (rules.min !== undefined && value.length < rules.min) {
-      return new Error(
-        `${value} must be minimum ${rules.min} symbols`
-      );
+      return new Error(`${value} must be minimum ${rules.min} symbols`)
     }
 
     if (rules.max !== undefined && value.length > rules.max) {
-      return new Error(
-        `${value} must be maximum ${rules.max} symbols`
-      );
+      return new Error(`${value} must be maximum ${rules.max} symbols`)
     }
 
-    return value;
-  },
-};
+    return value
+  }
+}
 
-export type NotEmptyString = BrandedPrimitive<
-  string,
-  { readonly NotEmptyString: unique symbol }
->;
+export type NotEmptyString = BrandedPrimitive<string, { readonly NotEmptyString: unique symbol }>
 export const NotEmptyString = {
   ofString: (value: string): NotEmptyString => {
-    return StringX.ofString({ min: 1 }, value) as NotEmptyString;
-  },
-};
+    return StringX.ofString({ min: 1 }, value) as NotEmptyString
+  }
+}
