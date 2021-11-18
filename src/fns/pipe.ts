@@ -58,7 +58,8 @@ export function pipe<A extends readonly unknown[], B, C, D, E, F, G, H, I, J>(
 ): (...a: A) => J
 
 export function pipe(...fns: any[]) {
-  return (...x: any[]) => fns.reduce((acc: any, cur: any, index: number) => (index === 0 ? acc(...x) : cur(acc)), fns[0])
+  return (...x: any[]) =>
+    fns.reduce((acc: any, cur: any, index: number) => (index === 0 ? acc(...x) : cur(acc)), fns[0])
 }
 
 export function pipeAsync<A extends readonly unknown[], B>(ab: (...a: A) => Promise<B> | B): (...a: A) => Promise<B>
