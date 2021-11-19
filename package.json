@@ -5,6 +5,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
+    "test": "jest --passWithNoTests",
     "lint": "tslint -p tsconfig.json",
     "prettier": "prettier --list-different \"./src/**/*.ts\"",
     "fix-prettier": "prettier --write \"./src/**/*.ts\"",
@@ -26,12 +27,36 @@
     "type": "git",
     "url": "https://github.com/Dionid/functional-oriented-programming-ts.git"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": true
+      }
+    }
+  },
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^27.0.3",
     "@types/node": "^16.11.7",
     "@types/prettier": "^2.4.1",
+    "jest": "^27.3.1",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.7",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
