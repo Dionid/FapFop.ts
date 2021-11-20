@@ -1,5 +1,6 @@
 import { BrandedPrimitive } from './index'
 
+export type StringX = BrandedPrimitive<string, { readonly StringX: unique symbol }>
 export const StringX = {
   ofString: (
     rules: {
@@ -20,7 +21,7 @@ export const StringX = {
   }
 }
 
-export type NotEmptyString = BrandedPrimitive<string, { readonly NotEmptyString: unique symbol }>
+export type NotEmptyString = BrandedPrimitive<StringX, { readonly NotEmptyString: unique symbol }>
 export const NotEmptyString = {
   ofString: (value: string): NotEmptyString => {
     return StringX.ofString({ min: 1 }, value) as NotEmptyString
