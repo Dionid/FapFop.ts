@@ -4,7 +4,7 @@
   </a>
 </h3>
 
-# Functional Oriented Programming (FOP)
+# Functional Oriented Programming (FOP) in TypeScript
 
 This library contains minimal set of types and functions, that can help 
 you creating application in Functional Oriented Programming style.
