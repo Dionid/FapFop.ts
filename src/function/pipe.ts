@@ -132,3 +132,8 @@ export function pipeAsync(...fns: any[]) {
       return index === 0 ? acc(...x) : cur(await acc)
     }, fns[0])
 }
+
+export const Pipe = {
+  pipe,
+  pipeAsync,
+}

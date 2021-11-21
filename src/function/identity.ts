@@ -13,3 +13,8 @@ export const identityAsync =
 
     return arg
   }
+
+export const Identity = {
+  identity,
+  identityAsync,
+}

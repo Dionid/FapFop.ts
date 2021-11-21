@@ -1,13 +1,13 @@
+// ! NOTICE ! Be really carefull with using it with generics, because in most cases it will not preserve types
 
-export type CArgs1<A, B> = (a: A) => B
-export type CArgs2<A, B, C> = CArgs1<A, CArgs1<B, C>>
-export type CArgs3<A, B, C, D> = CArgs2<A, B, CArgs1<C, D>>
-export type CArgs4<A, B, C, D, E> = CArgs3<A, B, C, CArgs1<D, E>>
-
-export function curry<A, B>(f: (a: A) => B): CArgs1<A, B>
-export function curry<A, B, C>(f: (a: A, b: B) => C): CArgs2<A, B, C>
-export function curry<A, B, C, D>(f: (a: A, b: B, c: C) => D): CArgs3<A, B, C, D>
-export function curry<A, B, C, D, E>(f: (a: A, b: B, c: C, d: D) => E): CArgs4<A, B, C, D, E>
+export function curry<A, B>(f: (a: A) => B): (a: A) => B
+export function curry<A, B, C>(f: (a: A, b: B) => C): (a: A) => (b: B) => C
+export function curry<A, B, C, D>(f: (a: A, b: B, c: C) => D): (a: A) => (b: B) => (c: C) => D
+export function curry<A, B, C, D, E>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D) => E
+export function curry<A, B, C, D, E, F>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D) => (e: E) => F
+export function curry<A, B, C, D, E, F, G>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D) => (e: E) => (f: F) => G
+export function curry<A, B, C, D, E, F, G, H>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D) => (e: E) => (f: F) => (g: G) => H
+export function curry<A, B, C, D, E, F, G, H, I>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D) => (e: E) => (f: F) => (g: G) => (h: H) => I
 export function curry(func: (...args: any[]) => any): any {
   return function curried(...args: any[]) {
     if (args.length >= func.length) {
@@ -18,15 +18,14 @@ export function curry(func: (...args: any[]) => any): any {
   };
 }
 
-// export type C2A1<A, B> = (a: A) => B
-// export type C2A2<A, B, C> = C2A1<A, C2A1<B, C>>
-// export type C2A3<A, B, C, D> = C2A2<A, B, (b: B, c: C) => D>
-// export type C2A4<A, B, C, D, E> = C2A2<A, B, (b: B, c: C, d: D) => E>
-
 export function curry2<A, B>(f: (a: A) => B): (a: A) => B
 export function curry2<A, B, C>(f: (a: A, b: B) => C): (a: A) => (b: B) => C
 export function curry2<A, B, C, D>(f: (a: A, b: B, c: C) => D): (a: A) => (b: B, c: C) => D
 export function curry2<A, B, C, D, E>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B, c: C, d: D) => E
+export function curry2<A, B, C, D, E, F>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B, c: C, d: D, e: E) => F
+export function curry2<A, B, C, D, E, F, G>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B, c: C, d: D, e: E, f: F) => G
+export function curry2<A, B, C, D, E, F, G, H>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B, c: C, d: D, e: E, f: F, g: G) => H
+export function curry2<A, B, C, D, E, F, G, H, I>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B, c: C, d: D, e: E, f: F, g: G, h: H) => I
 export function curry2(func: (...args: any[]) => any): any {
   return curry(func)
 }
@@ -35,7 +34,33 @@ export function curry3<A, B>(f: (a: A) => B): (a: A) => B
 export function curry3<A, B, C>(f: (a: A, b: B) => C): (a: A) => (b: B) => C
 export function curry3<A, B, C, D>(f: (a: A, b: B, c: C) => D): (a: A) => (b: B) => (c: C) => D
 export function curry3<A, B, C, D, E>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C, d: D) => D
+export function curry3<A, B, C, D, E, F>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C, d: D, e: E) => F
+export function curry3<A, B, C, D, E, F, G>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C, d: D, e: E, f: F) => G
+export function curry3<A, B, C, D, E, F, G, H>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C, d: D, e: E, f: F, g: G) => H
+export function curry3<A, B, C, D, E, F, G, H, I>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C, d: D, e: E, f: F, g: G, h: H) => I
 export function curry3(func: (...args: any[]) => any): any {
   return curry(func)
 }
 
+export function curry4<A, B>(f: (a: A) => B): (a: A) => B
+export function curry4<A, B, C>(f: (a: A, b: B) => C): (a: A) => (b: B) => C
+export function curry4<A, B, C, D>(f: (a: A, b: B, c: C) => D): (a: A) => (b: B) => (c: C) => D
+export function curry4<A, B, C, D, E>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D) => D
+export function curry4<A, B, C, D, E, F>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D, e: E) => F
+export function curry4<A, B, C, D, E, F, G>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D, e: E, f: F) => G
+export function curry4<A, B, C, D, E, F, G, H>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D, e: E, f: F, g: G) => H
+export function curry4<A, B, C, D, E, F, G, H, I>(f: (a: A, b: B, c: C, d: D) => E): (a: A) => (b: B) => (c: C) => (d: D, e: E, f: F, g: G, h: H) => I
+export function curry4(func: (...args: any[]) => any): any {
+  return curry(func)
+}
+
+export const flip = <A extends unknown[], B extends unknown[], C>(fn: (...a: A) => (...b: B) => C): (...b: B) => (...a: A) => C => {
+  return (...b: B) => (...a: A) => fn(...a)(...b)
+}
+
+export const Curry = {
+  curry,
+  curry2,
+  curry3,
+  flip,
+}
