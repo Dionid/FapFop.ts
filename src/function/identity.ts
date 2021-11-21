@@ -16,5 +16,5 @@ export const identityAsync =
 
 export const Identity = {
   identity,
-  identityAsync,
+  identityAsync
 }

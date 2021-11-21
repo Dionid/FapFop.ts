@@ -135,5 +135,5 @@ export function pipeAsync(...fns: any[]) {
 
 export const Pipe = {
   pipe,
-  pipeAsync,
+  pipeAsync
 }

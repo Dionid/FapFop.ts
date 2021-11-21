@@ -1,6 +1,6 @@
 {
   "name": "@fop-ts/core",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Function Oriented Programming (FOP) in Typescript",
   "main": "index.js",
   "types": "index.d.ts",
