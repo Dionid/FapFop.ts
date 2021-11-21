@@ -4,7 +4,6 @@ export const map =
     return array.map(fn)
   }
 
-
 export const Array = {
-  map,
+  map
 }

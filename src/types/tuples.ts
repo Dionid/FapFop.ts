@@ -8,5 +8,5 @@ export const pickTail = <T>(arg: [...any, T]): T => {
 
 export const Tuple = {
   pickHead,
-  pickTail,
+  pickTail
 }
