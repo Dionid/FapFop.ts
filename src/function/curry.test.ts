@@ -1,4 +1,4 @@
-import { curry, curry2 } from './index'
+import { curry, curry2 } from './curry'
 
 describe("curry", () => {
   type User = {
