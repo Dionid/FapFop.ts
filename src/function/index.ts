@@ -9,5 +9,5 @@ import { Pipe } from './pipe'
 export const Function = {
   Pipe,
   Identity,
-  Curry,
+  Curry
 }
