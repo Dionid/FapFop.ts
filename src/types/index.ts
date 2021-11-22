@@ -1,5 +1,6 @@
 export * from './tuples'
 export * from './array'
+export * from "./switch"
 
 export type Maybe<T> = T | null
 export type UnPromisify<T> = T extends Promise<infer U> ? U : T
