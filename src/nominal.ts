@@ -1,4 +1,4 @@
-import { MapDiscriminatedUnionHandlers, Union } from '../types/union'
+import { MapDiscriminatedUnionHandlers, Union } from './union'
 
 export type Nominal<T extends string | symbol = string | symbol, D extends Record<any, any> = Record<any, any>> = {
   type: T,

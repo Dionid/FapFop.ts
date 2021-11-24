@@ -1,4 +1,4 @@
-import { Nominal, NominalDiscriminatedUnionHandlers } from './index'
+import { Nominal, NominalDiscriminatedUnionHandlers } from './nominal'
 
 describe("adt", () => {
   it('should ', () => {
