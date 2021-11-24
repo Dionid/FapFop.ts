@@ -1,4 +1,4 @@
-import { ProductType, SumType, SumTypeHandlers } from './adt'
+import { ProductType, SumType, SumTypeHandlers } from './ADT'
 
 describe("adt", () => {
   it('should ', () => {

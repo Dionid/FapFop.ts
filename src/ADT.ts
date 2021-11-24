@@ -1,4 +1,4 @@
-import { Nominal, NominalDiscriminatedUnionHandlers } from './nominal'
+import { Nominal, NominalDiscriminatedUnionHandlers } from './Nominal'
 
 export type ProductType<T extends string | symbol = string | symbol, D extends Record<any, any> = Record<any, any>> = Nominal<T, D>
 
