@@ -1,13 +1,13 @@
 import { Nominal, NominalDiscriminatedUnionHandlers } from './Nominal'
 
-describe("adt", () => {
+describe('adt', () => {
   it('should ', () => {
     type User = {
       id: string
       username: string
     }
     type UserN = Nominal<'User', User>
-    const UserN = Nominal.createBehavior<UserN>("User")
+    const UserN = Nominal.createBehavior<UserN>('User')
 
     type Admin = {
       id: string
@@ -15,7 +15,7 @@ describe("adt", () => {
       otherAdminStuff: string
     }
     type AdminN = Nominal<'Admin', Admin>
-    const AdminN = Nominal.createBehavior<AdminN>("Admin")
+    const AdminN = Nominal.createBehavior<AdminN>('Admin')
 
     type Player = AdminN | UserN
 
@@ -31,14 +31,14 @@ describe("adt", () => {
     }
 
     const user: User = {
-      id: "string",
-      username: "string",
+      id: 'string',
+      username: 'string'
     }
 
     const admin: Admin = {
-      id: "string",
-      adminPass: "string",
-      otherAdminStuff: "string",
+      id: 'string',
+      adminPass: 'string',
+      otherAdminStuff: 'string'
     }
 
     const handlers = {
@@ -47,12 +47,12 @@ describe("adt", () => {
       },
       User: (us: UserN): UserN => {
         return us
-      },
+      }
     }
 
     function smFn(player: Player) {
       return [
-        Nominal.match(player, handlers),
+        Nominal.match(player, handlers)
         // matchSumType(player, handlers)
       ]
     }
@@ -64,4 +64,3 @@ describe("adt", () => {
     expect(smFn(userN)).toEqual([userN])
   })
 })
-

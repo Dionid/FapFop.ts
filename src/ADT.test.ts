@@ -1,13 +1,13 @@
 import { ProductType, SumType, SumTypeHandlers } from './ADT'
 
-describe("adt", () => {
+describe('adt', () => {
   it('should ', () => {
     type User = {
       id: string
       username: string
     }
     type UserN = ProductType<'User', User>
-    const UserN = ProductType.createBehavior<UserN>("User")
+    const UserN = ProductType.createBehavior<UserN>('User')
 
     type Admin = {
       id: string
@@ -15,7 +15,7 @@ describe("adt", () => {
       otherAdminStuff: string
     }
     type AdminN = ProductType<'Admin', Admin>
-    const AdminN = ProductType.createBehavior<AdminN>("Admin")
+    const AdminN = ProductType.createBehavior<AdminN>('Admin')
 
     type Player = AdminN | UserN
 
@@ -31,14 +31,14 @@ describe("adt", () => {
     }
 
     const user: User = {
-      id: "string",
-      username: "string",
+      id: 'string',
+      username: 'string'
     }
 
     const admin: Admin = {
-      id: "string",
-      adminPass: "string",
-      otherAdminStuff: "string",
+      id: 'string',
+      adminPass: 'string',
+      otherAdminStuff: 'string'
     }
 
     const handlers = {
@@ -47,14 +47,11 @@ describe("adt", () => {
       },
       User: (us: UserN): UserN => {
         return us
-      },
+      }
     }
 
     function smFn(player: Player) {
-      return [
-        Player.switchMatch(player, handlers),
-        SumType.match(player, handlers),
-      ]
+      return [Player.switchMatch(player, handlers), SumType.match(player, handlers)]
     }
 
     const adminN = AdminN.create(admin)
@@ -64,4 +61,3 @@ describe("adt", () => {
     expect(smFn(userN)).toEqual([userN, userN])
   })
 })
-
