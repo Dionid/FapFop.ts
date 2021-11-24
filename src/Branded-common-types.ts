@@ -1,4 +1,4 @@
-import { BrandedPrimitive } from './branded'
+import { BrandedPrimitive } from './Branded'
 
 export type StringX = BrandedPrimitive<string, { readonly StringX: unique symbol }>
 export const StringX = {
