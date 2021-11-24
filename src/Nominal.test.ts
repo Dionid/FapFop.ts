@@ -1,4 +1,4 @@
-import { Nominal, NominalDiscriminatedUnionHandlers } from './Nominal'
+import { Nominal, NominalBehaviour, NominalDiscriminatedUnionHandlers } from './Nominal'
 
 describe('adt', () => {
   it('should ', () => {
@@ -7,7 +7,7 @@ describe('adt', () => {
       username: string
     }
     type UserN = Nominal<'User', User>
-    const UserN = Nominal.createBehavior<UserN>('User')
+    const UserN = NominalBehaviour.createCurriedType<UserN>('User')
 
     type Admin = {
       id: string
@@ -15,7 +15,7 @@ describe('adt', () => {
       otherAdminStuff: string
     }
     type AdminN = Nominal<'Admin', Admin>
-    const AdminN = Nominal.createBehavior<AdminN>('Admin')
+    const AdminN = NominalBehaviour.createCurriedType<AdminN>('Admin')
 
     type Player = AdminN | UserN
 

@@ -1,4 +1,4 @@
-import { ProductType, SumType, SumTypeHandlers } from './ADT'
+import { ProductType, ProductTypeBehavior, SumType, SumTypeHandlers } from './ADT'
 
 describe('adt', () => {
   it('should ', () => {
@@ -7,7 +7,7 @@ describe('adt', () => {
       username: string
     }
     type UserN = ProductType<'User', User>
-    const UserN = ProductType.createBehavior<UserN>('User')
+    const UserN = ProductTypeBehavior.createCurriedType<UserN>('User')
 
     type Admin = {
       id: string
@@ -15,7 +15,7 @@ describe('adt', () => {
       otherAdminStuff: string
     }
     type AdminN = ProductType<'Admin', Admin>
-    const AdminN = ProductType.createBehavior<AdminN>('Admin')
+    const AdminN = ProductTypeBehavior.createCurriedType<AdminN>('Admin')
 
     type Player = AdminN | UserN
 

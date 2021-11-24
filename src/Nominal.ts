@@ -17,12 +17,6 @@ export const createC =
   (data: N['data']): Nominal<N['type'], N['data']> =>
     create(type, data)
 
-export const createBehavior = <N extends Nominal>(type: N['type']) => {
-  return {
-    create: createC<N>(type)
-  }
-}
-
 export type NominalDiscriminatedUnionHandlers<T extends Nominal> = MapDiscriminatedUnionHandlers<T, 'type'>
 export const match = <DU extends Nominal>(du: DU, handlers: NominalDiscriminatedUnionHandlers<DU>): DU =>
   Union.match<DU, 'type'>(du, 'type', handlers)
@@ -30,6 +24,15 @@ export const match = <DU extends Nominal>(du: DU, handlers: NominalDiscriminated
 export const Nominal = {
   create,
   createC,
-  createBehavior,
   match
+}
+
+export const createCurriedType = <N extends Nominal>(type: N['type']) => {
+  return {
+    create: createC<N>(type)
+  }
+}
+
+export const NominalBehaviour = {
+  createCurriedType
 }
