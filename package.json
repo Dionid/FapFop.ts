@@ -1,6 +1,6 @@
 {
-  "name": "@fop-ts/core",
-  "version": "0.0.21",
+  "name": "@fapfop/core",
+  "version": "0.0.22",
   "description": "Function Oriented Programming (FOP) in Typescript",
   "main": "index.js",
   "types": "index.d.ts",
@@ -25,7 +25,7 @@
   "author": "David Shekunts <ditreyw@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dionid/fop-ts.git"
+    "url": "https://github.com/Dionid/fapfop.git"
   },
   "jest": {
     "testEnvironment": "node",
@@ -63,9 +63,9 @@
     "typescript": "^4.4.4"
   },
   "bugs": {
-    "url": "https://github.com/Dionid/fop-ts/issues"
+    "url": "https://github.com/Dionid/fapfop/issues"
   },
-  "homepage": "https://github.com/Dionid/fop-ts",
+  "homepage": "https://github.com/Dionid/fapfop",
   "tags": [
     "typescript",
     "algebraic-data-types",
