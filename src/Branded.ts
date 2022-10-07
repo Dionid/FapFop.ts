@@ -1,8 +1,15 @@
-export const BrandedToken = Symbol('BrandedToken')
+export type Unbrand<T> = T extends string
+  ? string
+  : T extends number
+  ? string
+  : T extends boolean
+  ? string
+  : T extends Date
+  ? Date
+  : T extends Array<infer AT>
+  ? AT[]
+  : unknown
 
 export type Branded<T, BTT extends string | symbol> = T & {
-  readonly [BrandedToken]: BTT
+  readonly [key in BTT]: BTT
 }
-
-type Primitive = string | number | boolean | Date | string[] | number[] | boolean[] | Date[] | null | Buffer
-export type BrandedPrimitive<Type extends Primitive, BTT extends string | symbol> = Branded<Type, BTT>

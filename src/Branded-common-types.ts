@@ -1,6 +1,6 @@
-import { BrandedPrimitive } from './Branded'
+import { Branded } from './Branded'
 
-export type StringX = BrandedPrimitive<string, 'StringX'>
+export type StringX = Branded<string, 'StringX'>
 export const StringX = {
   ofString: (
     rules: {
@@ -21,7 +21,7 @@ export const StringX = {
   }
 }
 
-export type NotEmptyString = BrandedPrimitive<StringX, 'NotEmtpyString'>
+export type NotEmptyString = Branded<StringX, 'NotEmtpyString'>
 export const NotEmptyString = {
   ofString: (value: string): NotEmptyString => {
     return StringX.ofString({ min: 1 }, value) as NotEmptyString
