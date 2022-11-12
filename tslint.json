@@ -5,9 +5,6 @@
     "max-classes-per-file": false,
     "interface-name": false,
     "object-literal-sort-keys": false,
-    "variable-name": [
-      true,
-      "allow-leading-underscore"
-    ]
+    "variable-name": false
   }
 }
