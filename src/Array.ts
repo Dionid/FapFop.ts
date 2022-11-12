@@ -4,6 +4,13 @@ export const map =
     return array.map(fn)
   }
 
+export const filter =
+  <X>(fn: (x: X) => boolean) =>
+  (array: X[]) => {
+    return array.filter(fn)
+  }
+
 export const Array = {
-  map
+  map,
+  filter
 }
