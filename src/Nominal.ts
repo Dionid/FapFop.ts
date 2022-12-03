@@ -5,34 +5,27 @@ export type Nominal<T extends string | symbol = string | symbol, D extends Recor
   data: D
 }
 
-export const create = <T extends string | symbol, D>(type: T, data: D): Nominal<T, D> => {
+export const Nominal = <T extends string | symbol, D>(type: T, data: D): Nominal<T, D> => {
   return {
     type,
     data
   }
 }
 
-export const createC =
+export const curried =
   <N extends Nominal>(type: N['type']) =>
   (data: N['data']): Nominal<N['type'], N['data']> =>
-    create(type, data)
+    Nominal(type, data)
 
 export type NominalDiscriminatedUnionHandlers<T extends Nominal> = MapDiscriminatedUnionHandlers<T, 'type'>
 export const match = <DU extends Nominal>(du: DU, handlers: NominalDiscriminatedUnionHandlers<DU>): DU =>
   Union.match<DU, 'type'>(du, 'type', handlers)
 
-export const Nominal = {
-  create,
-  createC,
-  match
-}
+Nominal.createC = curried
+Nominal.match = match
 
-export const createCurriedType = <N extends Nominal>(type: N['type']) => {
+export const NominalBuilder = <N extends Nominal>(type: N['type']) => {
   return {
-    create: createC<N>(type)
+    create: curried<N>(type)
   }
-}
-
-export const NominalBehaviour = {
-  createCurriedType
 }

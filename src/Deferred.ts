@@ -3,23 +3,21 @@ export type Deferred<D> = (() => Promise<D>) & {
   reject: (value: D | PromiseLike<D>) => void
 }
 
-export const Deferred = {
-  new: <D>(timeout?: number): Deferred<D> => {
-    const deferred = (() => {
-      return promise
-    }) as Deferred<D>
+export const Deferred = <D>(timeout?: number): Deferred<D> => {
+  const deferred = (() => {
+    return promise
+  }) as Deferred<D>
 
-    const promise: Promise<D> = new Promise((res, rej) => {
-      deferred.reject = rej
-      deferred.resolve = res
+  const promise: Promise<D> = new Promise((res, rej) => {
+    deferred.reject = rej
+    deferred.resolve = res
 
-      if (timeout) {
-        setTimeout(() => {
-          rej()
-        }, timeout)
-      }
-    })
+    if (timeout) {
+      setTimeout(() => {
+        rej()
+      }, timeout)
+    }
+  })
 
-    return deferred
-  }
+  return deferred
 }
