@@ -1,9 +1,9 @@
-export type Deferred<D> = (() => Promise<D>) & {
+export type Deferred<D, E = Error> = (() => Promise<D>) & {
   resolve: (value: D | PromiseLike<D>) => void
-  reject: (value: D | PromiseLike<D>) => void
+  reject: (value: E | PromiseLike<E>) => void
 }
 
-export const Deferred = <D>(timeout?: number): Deferred<D> => {
+export const Deferred = <D, E extends Error>(timeout?: number): Deferred<D, E> => {
   const deferred = (() => {
     return promise
   }) as Deferred<D>
