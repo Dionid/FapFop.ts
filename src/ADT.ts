@@ -5,27 +5,20 @@ export type ProductType<
   D extends Record<any, any> = Record<any, any>
 > = Nominal<T, D>
 
-export const create = <T extends string | symbol, D>(type: T, data: D): ProductType<T, D> =>
-  Nominal.create<T, D>(type, data)
+export const ProductType = <T extends string | symbol, D extends Record<any, any>>(
+  type: T,
+  data: D
+): ProductType<T, D> => Nominal<T, D>(type, data)
 
-export const createC =
+export const curried =
   <N extends ProductType>(type: N['type']) =>
   (data: N['data']): ProductType<N['type'], N['data']> =>
-    create(type, data)
+    ProductType(type, data)
 
-export const ProductType = {
-  create,
-  createC
-}
+ProductType.curried = curried
 
-export const createCurriedType = <N extends ProductType>(type: N['type']) => {
-  return {
-    create: createC<N>(type)
-  }
-}
-
-export const ProductTypeBehavior = {
-  createCurriedType
+export const ProductTypeBuilder = <N extends ProductType>(type: N['type']) => {
+  return curried<N>(type)
 }
 
 export type SumType = ProductType
