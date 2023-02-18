@@ -1,4 +1,4 @@
-import { pipe, pipeAsync } from './Pipe'
+import { pipe, pipeAsync } from './pipe'
 
 describe('pipe and pipeAsync', () => {
   const increment = (n: number): number => {
