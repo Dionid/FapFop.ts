@@ -1,4 +1,4 @@
-import { Nominal, NominalBehaviour, NominalDiscriminatedUnionHandlers } from './Nominal'
+import { Nominal, NominalFactory, NominalDiscriminatedUnionHandlers } from './nominal'
 
 describe('adt', () => {
   it('should ', () => {
@@ -7,7 +7,7 @@ describe('adt', () => {
       username: string
     }
     type UserN = Nominal<'User', User>
-    const UserN = NominalBehaviour.createCurriedType<UserN>('User')
+    const UserN = NominalFactory<UserN>('User')
 
     type Admin = {
       id: string
@@ -15,7 +15,7 @@ describe('adt', () => {
       otherAdminStuff: string
     }
     type AdminN = Nominal<'Admin', Admin>
-    const AdminN = NominalBehaviour.createCurriedType<AdminN>('Admin')
+    const AdminN = NominalFactory<AdminN>('Admin')
 
     type Player = AdminN | UserN
 
@@ -57,8 +57,8 @@ describe('adt', () => {
       ]
     }
 
-    const adminN = AdminN.create(admin)
-    const userN = UserN.create(user)
+    const adminN = AdminN.new(admin)
+    const userN = UserN.new(user)
 
     expect(smFn(adminN)).toEqual([adminN])
     expect(smFn(userN)).toEqual([userN])
