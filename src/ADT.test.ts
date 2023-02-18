@@ -1,4 +1,4 @@
-import { ProductType, ProductTypeBehavior, SumType, SumTypeHandlers } from './ADT'
+import { ProductType, ProductTypeFactory, SumType, SumTypeHandlers } from './adt'
 
 describe('adt', () => {
   it('should ', () => {
@@ -7,7 +7,7 @@ describe('adt', () => {
       username: string
     }
     type UserN = ProductType<'User', User>
-    const UserN = ProductTypeBehavior.createCurriedType<UserN>('User')
+    const UserN = ProductTypeFactory<UserN>('User')
 
     type Admin = {
       id: string
@@ -15,7 +15,7 @@ describe('adt', () => {
       otherAdminStuff: string
     }
     type AdminN = ProductType<'Admin', Admin>
-    const AdminN = ProductTypeBehavior.createCurriedType<AdminN>('Admin')
+    const AdminN = ProductTypeFactory<AdminN>('Admin')
 
     type Player = AdminN | UserN
 
@@ -54,8 +54,8 @@ describe('adt', () => {
       return [Player.switchMatch(player, handlers), SumType.match(player, handlers)]
     }
 
-    const adminN = AdminN.create(admin)
-    const userN = UserN.create(user)
+    const adminN = AdminN.new(admin)
+    const userN = UserN.new(user)
 
     expect(smFn(adminN)).toEqual([adminN, adminN])
     expect(smFn(userN)).toEqual([userN, userN])

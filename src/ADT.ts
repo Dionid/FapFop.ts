@@ -1,4 +1,4 @@
-import { Nominal, NominalDiscriminatedUnionHandlers } from './Nominal'
+import { Nominal, NominalDiscriminatedUnionHandlers } from './nominal'
 
 export type ProductType<
   T extends string | symbol = string | symbol,
@@ -17,8 +17,10 @@ export const curried =
 
 ProductType.curried = curried
 
-export const ProductTypeBuilder = <N extends ProductType>(type: N['type']) => {
-  return curried<N>(type)
+export const ProductTypeFactory = <N extends ProductType>(type: N['type']) => {
+  return {
+    new: curried<N>(type)
+  }
 }
 
 export type SumType = ProductType

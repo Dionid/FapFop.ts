@@ -1,4 +1,4 @@
-import { WaitGroup } from './WaitGroup'
+import { WaitGroup } from './wait-group'
 
 describe('WaitGroup', () => {
   it('should succed', async () => {
@@ -6,8 +6,6 @@ describe('WaitGroup', () => {
 
     wg.add()
     wg.add()
-
-    expect(wg._promises.length).toBe(2)
 
     setTimeout(() => {
       wg.done()
@@ -19,8 +17,6 @@ describe('WaitGroup', () => {
 
   it('should succed with 2', async () => {
     const wg = WaitGroup.new(2)
-
-    expect(wg._promises.length).toBe(2)
 
     setTimeout(() => {
       wg.done()

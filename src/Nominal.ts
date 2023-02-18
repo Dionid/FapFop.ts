@@ -5,7 +5,7 @@ export type Nominal<T extends string | symbol = string | symbol, D extends Recor
   data: D
 }
 
-export const Nominal = <T extends string | symbol, D>(type: T, data: D): Nominal<T, D> => {
+export const Nominal = <T extends string | symbol, D extends Record<any, any>>(type: T, data: D): Nominal<T, D> => {
   return {
     type,
     data
@@ -24,8 +24,8 @@ export const match = <DU extends Nominal>(du: DU, handlers: NominalDiscriminated
 Nominal.createC = curried
 Nominal.match = match
 
-export const NominalBuilder = <N extends Nominal>(type: N['type']) => {
+export const NominalFactory = <N extends Nominal>(type: N['type']) => {
   return {
-    create: curried<N>(type)
+    new: curried<N>(type)
   }
 }
