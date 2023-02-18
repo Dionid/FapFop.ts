@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.32](https://github.com/Dionid/fapfop/compare/v0.0.31...v0.0.32) (2023-02-18)
+
+
+### Features
+
+* added more to package.json ([267c956](https://github.com/Dionid/fapfop/commit/267c956043dac4e4db38022b168fa2045dd35d21))
+* bumped TS and renamed files ([45c614c](https://github.com/Dionid/fapfop/commit/45c614c77db3f3375f91b8f5fc857f1b7ae513bd))
+
 ### [0.0.28](https://github.com/Dionid/fapfop/compare/v0.0.21...v0.0.28) (2023-02-18)
 
 ### Features
