@@ -1,4 +1,4 @@
-import { OptionalPromise } from './Types'
+import { OptionalPromise } from './types'
 
 export function pipe<A extends readonly unknown[], B>(ab: (...a: A) => B): (...a: A) => B
 export function pipe<A extends readonly unknown[], B, C>(ab: (...a: A) => B, bc: (b: B) => C): (...a: A) => C
