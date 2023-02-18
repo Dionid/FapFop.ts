@@ -28,7 +28,11 @@ export const match = <DU extends Record<K, any>, K extends keyof DU>(
     return handlers[du[key]](du)
   }
 
-  throw new Error(`There is no appropriate handler for Discriminate Union ${JSON.stringify(du)} with key ${String(key)} ${JSON.stringify(handlers)}`)
+  throw new Error(
+    `There is no appropriate handler for Discriminate Union ${JSON.stringify(du)} with key ${String(
+      key
+    )} ${JSON.stringify(handlers)}`
+  )
 }
 
 export type matchC<DU extends Record<K, any>, K extends keyof DU> = (
