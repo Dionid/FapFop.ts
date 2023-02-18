@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.37](https://github.com/Dionid/fapfop/compare/v0.0.34...v0.0.37) (2023-02-18)
+
+
+### Features
+
+* bumped npm version ([724d92d](https://github.com/Dionid/fapfop/commit/724d92dd74a53c391541f7202444d6b64112af1b))
+
+
+### Bug Fixes
+
+* test names ([b82565a](https://github.com/Dionid/fapfop/commit/b82565aaa223781681d1344841081cd6667e712f))
+
 ### [0.0.34](https://github.com/Dionid/fapfop/compare/v0.0.31...v0.0.34) (2023-02-18)
 
 
