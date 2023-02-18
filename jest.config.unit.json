@@ -1,0 +1,23 @@
+{
+  "testEnvironment": "node",
+  "testRegex": "(/__tests_unit__/.*|.(unit)(\\.|/)(test|spec))\\.ts$",
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "preset": "ts-jest",
+  "reporters": [
+    "default",
+    [
+      "jest-junit",
+      {
+        "outputName": "junit_unit.xml"
+      }
+    ]
+  ],
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "coverageReporters": ["lcov", "text", "cobertura"],
+  "globals": {
+    "ts-jest": {
+      "diagnostics": true
+    }
+  }
+}

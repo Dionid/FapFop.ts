@@ -22,12 +22,13 @@ export const match = <DU extends Record<K, any>, K extends keyof DU>(
   key: K,
   handlers: MapDiscriminatedUnionHandlers<DU, K>
 ): DU => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (handlers[du[key]]) {
-    // @ts-ignore
+    // @ts-expect-error: because TS is not perfect
     return handlers[du[key]](du)
   }
 
-  throw new Error(`There is no appropriate handler for Discriminate Union ${du} with key ${key} ${handlers}`)
+  throw new Error(`There is no appropriate handler for Discriminate Union ${JSON.stringify(du)} with key ${String(key)} ${JSON.stringify(handlers)}`)
 }
 
 export type matchC<DU extends Record<K, any>, K extends keyof DU> = (
