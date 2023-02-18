@@ -1,4 +1,5 @@
 {
+  "yarn": false,
   "branch": "main",
-  "contents": "lib"
+  "contents": "./lib"
 }
