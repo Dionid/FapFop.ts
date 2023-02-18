@@ -18,11 +18,9 @@
     "version": "npm run fix-prettier && git add -A src",
     "postversion": "git push && git push --tags",
     "prerelease": "npm run build",
-
     "lint-staged": "lint-staged",
     "lint:check": "eslint --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
     "lint:fix": "eslint --fix --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
-
     "spell:check": "cspell \"{README.md,CODE_OF_CONDUCT.md,CONTRIBUTING.md,.github/*.md,src/**/*.ts}\"",
     "test:unit": "jest --config jest.config.unit.json",
     "format:check": "prettier --check \"src/**/*.ts\"",

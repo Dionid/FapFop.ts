@@ -43,6 +43,7 @@ module.exports = {
     "import/no-extraneous-dependencies": "error",
     "import/no-mutable-exports": "error",
     "import/no-unused-modules": "error",
+    "@typescript-eslint/array-type": "off",
     "no-restricted-syntax": [
       "error",
       {
