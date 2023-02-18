@@ -3,7 +3,7 @@ export const pickHead = <T>(arg: [T, ...any]): T => {
 }
 
 export const pickTail = <T>(arg: [...any, T]): T => {
-  return arg[arg.length - 1]
+  return arg[arg.length - 1] as T
 }
 
 export const Tuple = {

@@ -15,11 +15,11 @@ const error = (ms: number, error?: Error, options: { unref: boolean } = { unref:
     const { unref } = options
 
     if (unref) {
-        return setTimeout(() => {
+      return setTimeout(() => {
         rej(error)
       }, ms).unref()
     } else {
-        return setTimeout(() => {
+      return setTimeout(() => {
         rej(error)
       }, ms)
     }

@@ -61,6 +61,7 @@ export function pipe<A extends readonly unknown[], B, C, D, E, F, G, H, I, J>(
 
 export function pipe(...fns: any[]) {
   return (...x: any[]) =>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
     fns.reduce((acc: any, cur: any, index: number) => (index === 0 ? acc(...x) : cur(acc)), fns[0])
 }
 
@@ -128,7 +129,9 @@ export function pipeAsync<A extends readonly unknown[], B, C, D, E, F, G, H, I, 
 
 export function pipeAsync(...fns: any[]) {
   return (...x: any[]) =>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
     fns.reduce(async (acc: any, cur: any, index: number) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
       return index === 0 ? acc(...x) : cur(await acc)
     }, fns[0])
 }

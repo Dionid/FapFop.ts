@@ -36,7 +36,7 @@ describe('pipe and pipeAsync', () => {
 
       expect(increment2(0)).toBe(2)
     })
-    it('should return in coorect order value', () => {
+    it('should return in correct order value', () => {
       const multThanInc = pipe(multBy2, increment)
       const incThanMult = pipe(increment, multBy2)
 
@@ -54,19 +54,19 @@ describe('pipe and pipeAsync', () => {
       expect(sumComposed(1, 2)).toBe(3)
     })
     it('should work with generics', () => {
-      const changeNameToIlyia = changeName('Ilay')
+      const changeNameToDavid = changeName('David')
 
-      const changeAgeAndNameComposed = pipe(changeUserAge(10), changeNameToIlyia)
+      const changeAgeAndNameComposed = pipe(changeUserAge(10), changeNameToDavid)
 
-      const changeNameAndAgeComposed = pipe<User[], User, User>(changeNameToIlyia, changeUserAge(10))
+      const changeNameAndAgeComposed = pipe<User[], User, User>(changeNameToDavid, changeUserAge(10))
 
       const user: User = {
         name: 'David',
         age: 73
       }
 
-      expect(changeAgeAndNameComposed(user)).toEqual({ name: 'Ilay', age: 10 })
-      expect(changeNameAndAgeComposed(user)).toEqual({ name: 'Ilay', age: 10 })
+      expect(changeAgeAndNameComposed(user)).toEqual({ name: 'David', age: 10 })
+      expect(changeNameAndAgeComposed(user)).toEqual({ name: 'David', age: 10 })
     })
   })
 

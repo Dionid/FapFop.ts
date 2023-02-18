@@ -8,7 +8,7 @@ export const Deferred = <D, E extends Error = Error>(timeout?: number): Deferred
     return promise
   }) as Deferred<D>
 
-  const promise: Promise<D> = new Promise((res, rej) => {
+  const promise = new Promise<D>((res, rej) => {
     deferred.reject = rej
     deferred.resolve = res
 

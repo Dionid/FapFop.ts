@@ -1,4 +1,4 @@
-export const returnOnThrow = <Args extends any[], R>(fn: (...args: Args) => R) => {
+export const returnOnThrow = <Args extends any[], R>(fn: (...args: Args) => Promise<R>) => {
   return async (...args: Args): Promise<R | Error> => {
     try {
       return await fn(...args)
@@ -11,7 +11,7 @@ export const returnOnThrow = <Args extends any[], R>(fn: (...args: Args) => R) =
   }
 }
 
-export const throwOnError = <Args extends any[], R>(fn: (...args: Args) => R) => {
+export const throwOnError = <Args extends any[], R>(fn: (...args: Args) => Promise<R>) => {
   return async (...args: Args): Promise<R> => {
     const res = await fn(...args)
 
@@ -24,7 +24,7 @@ export const throwOnError = <Args extends any[], R>(fn: (...args: Args) => R) =>
 }
 
 export const throwOnUndefined = <Args extends any[], R>(
-  fn: (...args: Args) => R | undefined,
+  fn: (...args: Args) => Promise<R | undefined>,
   error: Error = new Error(`Result is undefined`)
 ) => {
   return async (...args: Args): Promise<R> => {

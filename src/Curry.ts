@@ -1,4 +1,4 @@
-// ! NOTICE ! Be really carefull with using it with generics, because in most cases it will not preserve types
+// ! NOTICE ! Be really careful with using it with generics, because in most cases it will not preserve types
 
 export function curry<A, B>(f: (a: A) => B): (a: A) => B
 export function curry<A, B, C>(f: (a: A, b: B) => C): (a: A) => (b: B) => C
@@ -19,8 +19,10 @@ export function curry<A, B, C, D, E, F, G, H, I>(
 export function curry(func: (...args: any[]) => any): any {
   return function curried(...args: any[]) {
     if (args.length >= func.length) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-argument
       return func(...args)
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-argument
       return (...args2: any[]) => curried(...args, ...args2)
     }
   }

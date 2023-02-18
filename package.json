@@ -1,63 +1,73 @@
 {
   "name": "@fapfop/core",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Function Oriented Programming (FOP) in Typescript",
   "main": "index.js",
   "types": "index.d.ts",
+  "author": "David Shekunts <ditreyw@gmail.com>",
   "scripts": {
-    "test": "jest --passWithNoTests",
-    "lint": "tslint -p tsconfig.json",
-    "prettier": "prettier --list-different \"./src/**/*.ts\"",
-    "fix-prettier": "prettier --write \"./src/**/*.ts\"",
     "clean": "rimraf ./lib",
-    "prerelease": "npm run build",
     "prebuild": "npm run clean",
     "build:lib": "tsc -P tsconfig.build.json",
     "build:es": "tsc -P tsconfig.build-es6.json",
-    "build": "npm run build:lib && npm run build:es",
-    "prepare": "npm run build && cp -r ./lib/* . && rm -rf ./lib",
-    "prepublishOnly": "npm run lint",
-    "postpublish": "git clean -fd",
-    "preversion": "npm run lint",
-    "version": "npm run fix-prettier && git add -A src",
-    "postversion": "git push && git push --tags"
+    "build": "npm run build:lib && npm run build:es && cp package.json ./lib",
+    "lint-staged": "lint-staged",
+    "lint:check": "eslint --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
+    "lint:fix": "eslint --fix --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
+    "spell:check": "cspell \"{README.md,CODE_OF_CONDUCT.md,CONTRIBUTING.md,.github/*.md,src/**/*.ts}\"",
+    "test:unit": "jest --config jest.config.unit.json",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "format:fix": "prettier --write \"src/**/*.ts\"",
+    "release": "semantic-release",
+    "release:local": "standard-version"
   },
-  "author": "David Shekunts <ditreyw@gmail.com>",
+  "files": [
+    "lib"
+  ],
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "npm run spell:check",
+      "npm run lint:fix",
+      "npm run format:fix",
+      "git add"
+    ],
+    "**/*.{js,yml,yaml,json,md}": [
+      "npm run format:fix",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Dionid/fapfop.git"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "preset": "ts-jest",
-    "collectCoverage": true,
-    "coverageDirectory": "coverage",
-    "coverageReporters": [
-      "lcov",
-      "text"
-    ],
-    "globals": {
-      "ts-jest": {
-        "diagnostics": true
-      }
-    }
-  },
   "license": "MIT",
   "devDependencies": {
+    "semantic-release": "18.0.0",
+    "@semantic-release/changelog": "6.0.0",
+    "@semantic-release/commit-analyzer": "9.0.1",
+    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/git": "10.0.0",
+    "standard-version": "9.3.1",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.7",
     "@types/prettier": "^2.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "cspell": "^6.26.3",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-formatter-gitlab": "^4.0.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.27.5",
+    "husky": "^8.0.3",
     "jest": "^27.3.1",
+    "jest-junit": "^15.0.0",
+    "lint-staged": "^13.1.2",
+    "np": "^7.6.3",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.7",
-    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^4.4.4"
