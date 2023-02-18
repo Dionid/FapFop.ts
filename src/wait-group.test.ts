@@ -1,7 +1,7 @@
 import { WaitGroup } from './wait-group'
 
 describe('WaitGroup', () => {
-  it('should succed', async () => {
+  it('should succeed', async () => {
     const wg = WaitGroup.new()
 
     wg.add()
@@ -15,7 +15,7 @@ describe('WaitGroup', () => {
     await wg.wait()
   })
 
-  it('should succed with 2', async () => {
+  it('should succeed with 2', async () => {
     const wg = WaitGroup.new(2)
 
     setTimeout(() => {
