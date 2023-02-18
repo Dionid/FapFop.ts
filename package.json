@@ -19,7 +19,6 @@
     "test": "npm run test:unit",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "format:fix": "prettier --write \"src/**/*.ts\"",
-    "version": "standard-version",
     "publish": "np"
   },
   "lint-staged": {
