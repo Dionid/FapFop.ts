@@ -19,8 +19,8 @@
     "test": "npm run test:unit",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "format:fix": "prettier --write \"src/**/*.ts\"",
-    "release": "semantic-release",
-    "release:local": "standard-version"
+    "version": "standard-version",
+    "publish": "np"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
