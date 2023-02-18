@@ -10,7 +10,7 @@
     "prebuild": "npm run clean",
     "build:lib": "tsc -P tsconfig.build.json",
     "build:es": "tsc -P tsconfig.build-es6.json",
-    "build": "npm run build:lib && npm run build:es && cp package.json ./lib",
+    "build": "npm run build:lib && npm run build:es && cp package.json ./lib && cp README.md ./lib",
     "lint-staged": "lint-staged",
     "lint:check": "eslint --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
     "lint:fix": "eslint --fix --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
@@ -22,9 +22,6 @@
     "release": "semantic-release",
     "release:local": "standard-version"
   },
-  "files": [
-    "lib"
-  ],
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "npm run spell:check",
