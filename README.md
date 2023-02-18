@@ -11,7 +11,7 @@ you creating application in Functional Oriented Programming style.
 
 More on Functional Oriented Programming (FOP) you can find here:
 
-🇷🇺 https://fop.davidshekunts.ru
+https://fop.davidshekunts.ru
 
 # ATTENTION
 
@@ -26,7 +26,7 @@ hit "Watch" or "Star" to get notification.
 
 `npm install @fapfop/core`
 
-# Used by
+# Used in
 
 1. 🛌 FDD (https://github.com/Dionid/fdd-ts) – Fatigue Driven Development
 1. 💬 Teleadmin (https://github.com/Dionid/teleadmin) – Admin and CRM for Telegram.
@@ -35,7 +35,7 @@ hit "Watch" or "Star" to get notification.
 
 All news and announcements you can find in:
 
-🇷🇺 🦾 IT-Качалка Давида Шекунца 💪 – https://t.me/it_kachalka
+💪 David Shekunts IT-Kachalka 🦾 – https://t.me/it_kachalka
 
 # License
 
