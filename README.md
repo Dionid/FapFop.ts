@@ -22,7 +22,7 @@ download it as zip ("Code" -> "Download ZIP") and use files, located in
 When library will be stabilized I'll announce it in this repo, so you can
 hit "Watch" or "Star" to get notification.
 
-# INSTALL
+# Install
 
 `npm install @fapfop/core`
 

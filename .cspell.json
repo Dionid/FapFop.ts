@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "language": "en",
-  "words": ["fapfop", "Unbrand", "mult", "Teleadmin", "Качалка", "Давида", "Шекунца"],
+  "words": ["fapfop", "Unbrand", "mult", "Teleadmin", "Качалка", "Давида", "Шекунца", "Shekunts", "Kachalka"],
   "flagWords": [],
   "ignorePaths": ["package.json", "package-lock.json", "tsconfig.json", "node_modules/**"]
 }
