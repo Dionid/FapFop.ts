@@ -6,4 +6,3 @@ tslint.json
 src
 .gitignore
 tsconfig.*
-tslin.json
