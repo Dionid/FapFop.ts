@@ -1,4 +1,4 @@
-export * from './types'
+export * from './branded'
 export * from './boolean-number'
 export * from './char'
 export * from './float'

@@ -1,4 +1,4 @@
-import { Branded } from './types'
+import { Branded } from './branded'
 
 export type TimeHHMM = Branded<string, 'TimeHHMM'>
 export const TimeHHMM = {

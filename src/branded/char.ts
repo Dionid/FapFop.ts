@@ -1,4 +1,4 @@
-import { Branded } from './types'
+import { Branded } from './branded'
 
 export type Char<Max extends number, Min extends number> = Branded<string, `Char${Min}${Max}`>
 export const CharFactory = {

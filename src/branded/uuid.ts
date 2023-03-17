@@ -1,6 +1,6 @@
 import { v4, validate } from 'uuid'
 
-import { Branded } from './types'
+import { Branded } from './branded'
 
 export type UUID = Branded<string, 'UUID'>
 export const UuidFactory = <T extends UUID>() => {

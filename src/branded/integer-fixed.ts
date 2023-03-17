@@ -1,4 +1,4 @@
-import { Branded } from './types'
+import { Branded } from './branded'
 
 export type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N
   ? Acc[number]
