@@ -1,6 +1,6 @@
 {
   "name": "@fapfop/core",
-  "version": "0.0.42",
+  "version": "0.0.43-0",
   "description": "Function Oriented Programming (FOP) in Typescript",
   "main": "index.js",
   "types": "index.d.ts",
@@ -9,6 +9,8 @@
     "lint-staged": "lint-staged",
     "lint:check": "eslint --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
     "lint:fix": "eslint --fix --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
+    "prettier:check": "prettier --check \"src/**/*.ts\"",
+    "prettier:write": "prettier --write \"src/**/*.ts\"",
     "spell:check": "cspell \"{README.md,CODE_OF_CONDUCT.md,CONTRIBUTING.md,.github/*.md,src/**/*.ts}\"",
     "beatify": "npm run spell:check && npm run lint:fix && npm run prettier:write",
     "clean": "rimraf ./lib",
@@ -19,19 +21,17 @@
     "copy-assets": "cp package.json ./lib && cp README.md ./lib",
     "test:unit": "jest --config jest.config.unit.json",
     "test": "npm run test:unit",
-    "format:check": "prettier --check \"src/**/*.ts\"",
-    "format:fix": "prettier --write \"src/**/*.ts\"",
-    "publish:prepatch": "npm run beatify && npm run build && standart-version --prerelease && npm run copy-assets && npm publish"
+    "publish:prepatch": "npm run beatify && npm run build && standard-version --prerelease && npm run copy-assets && npm publish"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "npm run spell:check",
       "npm run lint:fix",
-      "npm run format:fix",
+      "npm run prettier:write",
       "git add"
     ],
     "**/*.{js,yml,yaml,json,md}": [
-      "npm run format:fix",
+      "npm run prettier:write",
       "git add"
     ]
   },
@@ -62,7 +62,7 @@
     "lint-staged": "^13.1.2",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
-    "standard-version": "9.3.1",
+    "standard-version": "^9.3.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.9.5"
   },
