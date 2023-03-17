@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.42](https://github.com/Dionid/fapfop/compare/v0.0.41...v0.0.42) (2023-03-17)
+
+
+### Features
+
+* added commitlint ([7bcbc7a](https://github.com/Dionid/fapfop/commit/7bcbc7a8c708011dc64876d5fd7f1e97e060d9cc))
+
 ### [0.0.41](https://github.com/Dionid/fapfop/compare/v0.0.40...v0.0.41) (2023-03-17)
 
 
