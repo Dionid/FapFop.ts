@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.41](https://github.com/Dionid/fapfop/compare/v0.0.40...v0.0.41) (2023-03-17)
+
+
+### Features
+
+* added semantic release ([6c1a6a1](https://github.com/Dionid/fapfop/commit/6c1a6a1d0a64672510c75551e03d13f39806afc5))
+
 ### [0.0.37](https://github.com/Dionid/fapfop/compare/v0.0.34...v0.0.37) (2023-02-18)
 
 
