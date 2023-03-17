@@ -1,6 +1,6 @@
 {
   "name": "@fapfop/core",
-  "version": "0.0.43-0",
+  "version": "0.0.43",
   "description": "Function Oriented Programming (FOP) in Typescript",
   "main": "index.js",
   "types": "index.d.ts",
@@ -21,7 +21,8 @@
     "copy-assets": "cp package.json ./lib && cp README.md ./lib",
     "test:unit": "jest --config jest.config.unit.json",
     "test": "npm run test:unit",
-    "publish:prepatch": "npm run beatify && npm run build && standard-version --prerelease && npm run copy-assets && npm publish"
+    "publish:prerelease": "npm run beatify && npm run build && standard-version --prerelease && npm run copy-assets && npm publish",
+    "publish:patch": "npm run beatify && npm run build && standard-version --release-as patch && npm run copy-assets && npm publish"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
