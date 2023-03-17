@@ -6,21 +6,22 @@
   "types": "index.d.ts",
   "author": "David Shekunts <ditreyw@gmail.com>",
   "scripts": {
-    "clean": "rimraf ./lib",
-    "prebuild": "npm run clean",
-    "build:lib": "tsc -P tsconfig.build.json",
-    "build:es": "tsc -P tsconfig.build-es6.json",
-    "build": "npm run build:lib && npm run build:es && cp package.json ./lib && cp README.md ./lib",
     "lint-staged": "lint-staged",
     "lint:check": "eslint --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
     "lint:fix": "eslint --fix --max-warnings 0 --format stylish \"src/**/*.ts{,x}\"",
     "spell:check": "cspell \"{README.md,CODE_OF_CONDUCT.md,CONTRIBUTING.md,.github/*.md,src/**/*.ts}\"",
+    "beatify": "npm run spell:check && npm run lint:fix && npm run prettier:write",
+    "clean": "rimraf ./lib",
+    "prebuild": "npm run clean",
+    "build:lib": "tsc -P tsconfig.build.json",
+    "build:es": "tsc -P tsconfig.build-es6.json",
+    "build": "npm run build:lib && npm run build:es",
+    "copy-assets": "cp package.json ./lib && cp README.md ./lib",
     "test:unit": "jest --config jest.config.unit.json",
     "test": "npm run test:unit",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "format:fix": "prettier --write \"src/**/*.ts\"",
-    "publish": "np",
-    "semantic-release": "semantic-release"
+    "publish:prepatch": "npm run beatify && npm run build && standart-version --prerelease && npm run copy-assets && npm publish"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
@@ -42,10 +43,6 @@
   "devDependencies": {
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
-    "@semantic-release/changelog": "6.0.0",
-    "@semantic-release/commit-analyzer": "9.0.1",
-    "@semantic-release/exec": "6.0.3",
-    "@semantic-release/git": "10.0.0",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.7",
     "@types/prettier": "^2.4.1",
@@ -63,10 +60,8 @@
     "jest": "^27.3.1",
     "jest-junit": "^15.0.0",
     "lint-staged": "^13.1.2",
-    "np": "^7.6.3",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
-    "semantic-release": "^20.1.1",
     "standard-version": "9.3.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.9.5"
