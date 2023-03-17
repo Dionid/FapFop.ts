@@ -12,7 +12,8 @@
     "Shekunts",
     "Kachalka",
     "MMDDH",
-    "HHMM"
+    "HHMM",
+    "commitlint"
   ],
   "flagWords": [],
   "ignorePaths": ["package.json", "package-lock.json", "tsconfig.json", "node_modules/**"]
