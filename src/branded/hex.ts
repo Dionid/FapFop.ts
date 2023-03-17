@@ -1,4 +1,4 @@
-import { Branded } from './types'
+import { Branded } from './branded'
 
 export type HexRange<Max extends number, Min extends number> = Branded<string, `Hex${Min}${Max}`>
 export const HexRangeFactory = {

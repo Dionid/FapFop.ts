@@ -13,18 +13,9 @@ More on Functional Oriented Programming (FOP) you can find here:
 
 https://fop.davidshekunts.ru
 
-# ATTENTION
-
-Right now this library in PRE-ALPHA MODE, so its better for you just to
-download it as zip ("Code" -> "Download ZIP") and use files, located in
-`src` folder.
-
-When library will be stabilized I'll announce it in this repo, so you can
-hit "Watch" or "Star" to get notification.
-
 # Install
 
-`npm install @fapfop/core`
+`npm install -s @fapfop/core`
 
 # Used in
 

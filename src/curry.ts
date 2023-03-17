@@ -96,5 +96,6 @@ export const Curry = {
   curry,
   curry2,
   curry3,
+  curry4,
   flip
 }

@@ -1,4 +1,4 @@
-import { Branded } from './types'
+import { Branded } from './branded'
 
 // # UInt
 
