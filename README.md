@@ -20,9 +20,11 @@ https://fop.davidshekunts.ru
 # Release
 
 ```
+# Locally
 git add .
 git commit -m "..."
 npm run publish:(prerelease | patch | minor | major)
+git push --follow-tags origin main
 ```
 
 # Used in
