@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.45](https://github.com/Dionid/fapfop/compare/v0.0.44...v0.0.45) (2023-03-20)
+
+
+### Features
+
+* added beautify:check ([b424c3b](https://github.com/Dionid/fapfop/commit/b424c3b81a11ef74021c5aac60af47f50c292974))
+
+
+### Bug Fixes
+
+* cd lib ([4f2758e](https://github.com/Dionid/fapfop/commit/4f2758e26286da2ab602b86f61578fc8385f78d2))
+
 ### [0.0.44](https://github.com/Dionid/fapfop/compare/v0.0.43...v0.0.44) (2023-03-20)
 
 
