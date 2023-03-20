@@ -12,7 +12,8 @@
     "prettier:check": "prettier --check \"src/**/*.ts\"",
     "prettier:write": "prettier --write \"src/**/*.ts\"",
     "spell:check": "cspell \"{README.md,CODE_OF_CONDUCT.md,CONTRIBUTING.md,.github/*.md,src/**/*.ts}\"",
-    "beatify": "npm run spell:check && npm run lint:fix && npm run prettier:write",
+    "beatify:check": "npm run spell:check && npm run lint:check && npm run prettier:check",
+    "beatify:write": "npm run spell:check && npm run lint:fix && npm run prettier:write",
     "clean": "rimraf ./lib",
     "prebuild": "npm run clean",
     "build:lib": "tsc -P tsconfig.build.json",
@@ -21,21 +22,17 @@
     "copy-assets": "cp package.json ./lib && cp README.md ./lib",
     "test:unit": "jest --config jest.config.unit.json",
     "test": "npm run test:unit",
-    "publish:prerelease": "npm run beatify && npm run build && standard-version --prerelease && npm run copy-assets && npm publish",
-    "publish:patch": "npm run beatify && npm run build && standard-version --release-as patch && npm run copy-assets && npm publish",
-    "publish:minor": "npm run beatify && npm run build && standard-version --release-as minor && npm run copy-assets && npm publish",
-    "publish:major": "npm run beatify && npm run build && standard-version --release-as major && npm run copy-assets && npm publish"
+    "publish:prerelease": "npm run beatify:check && npm run build && standard-version --prerelease && npm run copy-assets && npm publish",
+    "publish:patch": "npm run beatify:check && npm run build && standard-version --release-as patch && npm run copy-assets && npm publish",
+    "publish:minor": "npm run beatify:check && npm run build && standard-version --release-as minor && npm run copy-assets && npm publish",
+    "publish:major": "npm run beatify:check && npm run build && standard-version --release-as major && npm run copy-assets && npm publish"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
-      "npm run spell:check",
-      "npm run lint:fix",
-      "npm run prettier:write",
-      "git add"
+      "npm run beatify:check"
     ],
     "**/*.{js,yml,yaml,json,md}": [
-      "npm run prettier:write",
-      "git add"
+      "npm run prettier:check"
     ]
   },
   "repository": {
