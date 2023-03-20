@@ -22,7 +22,9 @@
     "test:unit": "jest --config jest.config.unit.json",
     "test": "npm run test:unit",
     "publish:prerelease": "npm run beatify && npm run build && standard-version --prerelease && npm run copy-assets && npm publish",
-    "publish:patch": "npm run beatify && npm run build && standard-version --release-as patch && npm run copy-assets && npm publish"
+    "publish:patch": "npm run beatify && npm run build && standard-version --release-as patch && npm run copy-assets && npm publish",
+    "publish:minor": "npm run beatify && npm run build && standard-version --release-as minor && npm run copy-assets && npm publish",
+    "publish:major": "npm run beatify && npm run build && standard-version --release-as major && npm run copy-assets && npm publish"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [

@@ -17,6 +17,14 @@ https://fop.davidshekunts.ru
 
 `npm install -s @fapfop/core`
 
+# Release
+
+```
+git add .
+git commit -m "..."
+npm run publish:(prerelease | patch | minor | major)
+```
+
 # Used in
 
 1. 🛌 FDD (https://github.com/Dionid/fdd-ts) – Fatigue Driven Development
