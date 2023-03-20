@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.44](https://github.com/Dionid/fapfop/compare/v0.0.43...v0.0.44) (2023-03-20)
+
+
+### Features
+
+* added filterUndefined ([2dc8550](https://github.com/Dionid/fapfop/commit/2dc855024ce6982076e3bd3f4c2e89eaed904bd6))
+
 ### [0.0.43](https://github.com/Dionid/fapfop/compare/v0.0.43-0...v0.0.43) (2023-03-17)
 
 ### [0.0.43-0](https://github.com/Dionid/fapfop/compare/v0.0.42...v0.0.43-0) (2023-03-17)
