@@ -32,12 +32,6 @@ git push --follow-tags origin main
 1. 🛌 FDD (https://github.com/Dionid/fdd-ts) – Fatigue Driven Development
 1. 💬 Teleadmin (https://github.com/Dionid/teleadmin) – Admin and CRM for Telegram.
 
-# News
-
-All news and announcements you can find in:
-
-💪 David Shekunts IT-Kachalka 🦾 – https://t.me/it_kachalka
-
 # License
 
 The MIT License (MIT)
